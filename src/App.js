@@ -2,6 +2,8 @@ import React from 'react';
 import gotLogo from './images/got-logo-png-1.png';
 import './App.css';
 
+import characters from './characters';
+
 function App() {
   return (
     <div className="App">
