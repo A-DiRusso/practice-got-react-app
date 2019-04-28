@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      character: ''
     }
   }
 
@@ -21,12 +21,20 @@ class App extends React.Component {
           <h3>
             Character of Thrones App
           </h3>
-            <CharacterList characters={Object.values(characters)} />
+            <CharacterList characters={Object.values(characters)} handleClick={this._setCharactersState} />
         </header>
       </div>
     );
+  }
+  _setCharactersState = (character) => {
+    console.log(`You picked ${character.name}`)
+    this.setState({
+      character
+    })
+
   }
 }
 
 
 export default App;
+      

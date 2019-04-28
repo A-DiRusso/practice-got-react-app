@@ -1,19 +1,38 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 
 function CharacterList(props) {
   return (
-    <ul>
+    <div className="list-group w-50 mx-auto">
         {
             props.characters.map((c, i) => {
-                return (
-                    <li key={i} className="list-group-item">
+                return(
+                    <a href="#"
+                        key={i}
+                        className="list-group-item list-group-action"
+                        onClick={() => {
+                            props.handleClick(c)
+                        }}
+                    >
                         {c.name}
-                    </li>
-                )
+                    </a>
+                );
             })
         }
-      
-    </ul>
+        
+        {/* <ul className="list-group w-100">
+            {
+                props.characters.map((c, i) => {
+                    return (
+                        <li key={i} className="list-group-item">
+                            {c.name}
+                        </li>
+                    )
+                })
+            }
+        
+        </ul> */}
+    </div>
   )
 }
 
